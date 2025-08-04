@@ -5,10 +5,10 @@
 
 <svelte:head>
   {#if data.post}
-    <title>{data.post.title} | Abdul-Almotaleb</title>
+    <title>{data.post.title} | Mohammed Waled</title>
     <meta name="description" content={data.post.description || `Blog post about ${data.post.title}`} />
   {:else}
-    <title>Post Not Found | Abdul-Almotaleb</title>
+    <title>Post Not Found | Mohammed Waled</title>
     <meta name="description" content="The blog post you are looking for could not be found." />
   {/if}
 </svelte:head>
