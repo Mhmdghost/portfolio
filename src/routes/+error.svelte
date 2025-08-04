@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>{$page.status} - {$page.error?.message || 'Error'} | Abdul-Almotaleb</title>
+  <title>{$page.status} - {$page.error?.message || 'Error'} | Mohammed Waled</title>
 </svelte:head>
 
 <div class="flex flex-col items-center justify-center py-12 text-center">

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdul-almotaleb-blog.netlify.app/sitemap.xml
+Sitemap: https://mohammed-waled-blog.netlify.app/sitemap.xml
