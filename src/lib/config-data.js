@@ -1,31 +1,50 @@
 export const defaultConfig = {
   site: {
-    title: "Mohammed Waled's Portfolio",
-    tagline: "Network & CyberOps Engineer",
-    description: "Professional portfolio showcasing my work in networking, SOC, and cybersecurity.",
-    domain: "portfolio-rsy6.vercel.app",
+    title: "Mohammed Waled",
+    tagline: "Network Engineer | CyberOps Associate",
+    description: "Portfolio of Mohammed Waled, specialized in network security, SOC operations, and practical defensive security projects.",
+    domain: "your-domain.com",
     language: "en",
-    copyright_year: new Date().getFullYear()
+    copyright_year: 2025
   },
   owner: {
-    name: "Mohammed",
+    name: "Mohammed Waled",
     full_name: "Mohammed Waled",
-    profession: "Network & CyberOps Engineer",
-    bio: "I'm a network security specialist and CyberOps enthusiast. I share knowledge, defend infrastructures, and teach students about cybersecurity fundamentals.",
+    profession: "Network  Engineer | CyberOps Associate",
+    bio: "I'm Mohammed Waled, a computer engineering graduate and cybersecurity instructor with a passion for SOC operations and network defense. I specialize in tools like pfSense, Wireshark, and IDS/IPS systems, and actively work on building my portfolio with hands-on projects in network monitoring and threat detection.",
     location: "Iraq",
     email: "3kr2001@gmail.com"
   },
   social: {
     github: "https://github.com/Mhmdghost",
-    linkedin: "",
-    twitter: "",
-    website: "https://portfolio-rsy6.vercel.app",
-    blog: "https://youtube.com/@3KRSECURITY"
+    linkedin: "https://www.linkedin.com/in/mohammed-waled-burhan-61b88a30a/",
+    youtube: "https://www.youtube.com/@3KRSECURITY",
+    website: "",
+    blog: ""
   },
   skills: {
-    networking: ["pfSense", "Wireshark", "IDS/IPS", "GNS3", "CCNA", "CyberOps"],
-    technical: ["Linux", "VirtualBox", "Kali Linux", "VLAN", "Firewall", "Routing", "Packet Tracer"],
-    certifications: ["CCNA (in progress)", "CyberOps Associate"]
+    networking: [
+      { name: "CCNA (Cisco Certified Network Associate)", icon: "🌐" },
+      { name: "CyberOps (Cisco CyberOps Associate)", icon: "🛡️" },
+      { name: "SOC Operations", level: "Intermediate", icon: "👨‍💻" },
+      { name: "Network Monitoring", level: "Intermediate", icon: "📊" },
+      { name: "Firewall Configuration ", level: "Advanced", icon: "🔥" },
+      { name: "Incident Response", level: "Intermediate", icon: "🚨" }
+    ],
+    technical: [
+      { name: "pfSense", level: "Advanced", icon: "🧱" },
+      { name: "GNS3 (Network Emulation)", level: "Intermediate", icon: "🧪" },
+      { name: "SIEM (Security Info & Event Mgmt)", level: "Intermediate", icon: "🔐" },
+      { name: "Cisco IOS & Configuration", level: "Intermediate", icon: "⚙️" },
+      { name: "Wireshark", level: "Intermediate", icon: "🦈" },
+      { name: "Linux & CLI", level: "Advanced", icon: "🐧" },
+      { name: "Burp Suite", level: "Intermediate", icon: "🔧" },
+      { name: "IDS/IPS Systems", level: "Intermediate", icon: "🛡️" }
+    ],
+    certifications: [
+      { name: "CCNA", description: "Cisco Certified Network Associate", icon: "🏆" },
+      { name: "CyberOps Associate", description: "Cisco CyberOps Associate", icon: "🥇" }
+    ]
   },
   theme: {
     primary_color: "#13B9FD",
@@ -36,28 +55,28 @@ export const defaultConfig = {
   },
   navigation: {
     show_home: true,
-    show_projects: true,
+    show_projects: false,
     show_blog: true,
     show_contact: false
   },
   features: {
     show_skills: true,
     show_certifications: true,
-    show_projects: true,
+    show_projects: false,
     show_blog: true,
     show_social_links: true,
     enable_dark_mode: true,
     enable_animations: true
   },
   seo: {
-    keywords: "portfolio, network engineer, CyberOps, pfSense, CCNA, SOC",
+    keywords: "network security, cybersecurity, CCNA, CyberOps, pfSense, SOC, network monitoring",
     author: "Mohammed Waled",
     robots: "index, follow"
   },
   contact: {
     show_contact_form: false,
     email: "3kr2001@gmail.com",
-    phone: "",
+    phone: "07724227780",
     address: ""
   },
   projects: []
