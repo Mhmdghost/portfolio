@@ -10,7 +10,7 @@ export const defaultConfig = {
   owner: {
     name: "Mohammed Waled",
     full_name: "Mohammed Waled",
-    profession: "Network  Engineer | CyberOps Associate",
+    profession: "Network Engineer | CyberOps Associate",
     bio: "I'm Mohammed Waled, a computer engineering graduate and cybersecurity instructor with a passion for SOC operations and network defense. I specialize in tools like pfSense, Wireshark, and IDS/IPS systems, and actively work on building my portfolio with hands-on projects in network monitoring and threat detection.",
     location: "Iraq",
     email: "3kr2001@gmail.com"
@@ -32,18 +32,7 @@ export const defaultConfig = {
       { name: "Incident Response", level: "Intermediate", icon: "🚨" }
     ],
     technical: [
-      { name: "pfSense", level: "Advanced", icon: "🧱" },
-      { name: "GNS3 (Network Emulation)", level: "Intermediate", icon: "🧪" },
-      { name: "SIEM (Security Info & Event Mgmt)", level: "Intermediate", icon: "🔐" },
-      { name: "Cisco IOS & Configuration", level: "Intermediate", icon: "⚙️" },
-      { name: "Wireshark", level: "Intermediate", icon: "🦈" },
-      { name: "Linux & CLI", level: "Advanced", icon: "🐧" },
-      { name: "Burp Suite", level: "Intermediate", icon: "🔧" },
-      { name: "IDS/IPS Systems", level: "Intermediate", icon: "🛡️" }
-    ],
-    certifications: [
-      { name: "CCNA", description: "Cisco Certified Network Associate", icon: "🏆" },
-      { name: "CyberOps Associate", description: "Cisco CyberOps Associate", icon: "🥇" }
+      { name: "pfSense", level: "Advanced", icon: "🧱" }
     ]
   },
   theme: {
