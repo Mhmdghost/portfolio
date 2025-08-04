@@ -7,7 +7,6 @@
 	
 	let { children } = $props();
 	
-
 	// Current path for active link highlighting
 	let path = $derived($page.url.pathname);
 	
@@ -19,10 +18,8 @@
 
 <div class="flex flex-col min-h-screen dark">
 	<Header path={path} />
-	
 	<main class="container-custom py-8 flex-grow">
 		{@render children()}
 	</main>
-	
 	<Footer />
 </div>

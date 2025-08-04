@@ -47,11 +47,11 @@ export const defaultConfig = {
     ]
   },
   theme: {
-    primary_color: "#13B9FD",
-    secondary_color: "#0175C2",
-    dark_background: "#0D1117",
-    card_background: "linear-gradient(145deg, #1C2128 0%, #22272E 100%)",
-    border_color: "#30363D"
+    primary_color: "#3b82f6", // Light blue like Boot.dev
+    secondary_color: "#1d4ed8", // Darker blue
+    dark_background: "#0f172a", // Very dark blue-gray like Boot.dev
+    card_background: "linear-gradient(145deg, #1e293b 0%, #334155 100%)", // Slate gray gradient
+    border_color: "#475569" // Subtle border color
   },
   navigation: {
     show_home: true,
