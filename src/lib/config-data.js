@@ -32,7 +32,18 @@ export const defaultConfig = {
       { name: "Incident Response", level: "Intermediate", icon: "🚨" }
     ],
     technical: [
-      { name: "pfSense", level: "Advanced", icon: "🧱" }
+      { name: "pfSense", level: "Advanced", icon: "🧱" },
+      { name: "GNS3 (Network Emulation)", level: "Intermediate", icon: "🦪" },
+      { name: "SIEM (Security Info & Event Mgmt)", level: "Intermediate", icon: "🔐" },
+      { name: "Cisco IOS & Configuration", level: "Intermediate", icon: "⚙️" },
+      { name: "Wireshark", level: "Intermediate", icon: "🦈" },
+      { name: "Linux & CLI", level: "Advanced", icon: "🐧" },
+      { name: "Burp Suite", level: "Intermediate", icon: "🔧" },
+      { name: "IDS/IPS Systems", level: "Intermediate", icon: "🛡️" }
+    ],
+    certifications: [
+      { name: "CCNA", description: "Cisco Certified Network Associate", icon: "🏆" },
+      { name: "CyberOps Associate", description: "Cisco CyberOps Associate", icon: "🥇" }
     ]
   },
   theme: {

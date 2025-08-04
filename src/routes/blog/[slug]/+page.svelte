@@ -22,9 +22,7 @@
         </svg>
         Back to Blog
       </a>
-      
       <h1 class="text-3xl md:text-4xl font-bold text-white">{data.post.title}</h1>
-      
       <div class="flex items-center text-gray-400 mt-4">
         <time datetime={data.post.date}>
           {new Date(data.post.date).toLocaleDateString('en-US', {
@@ -33,7 +31,6 @@
             day: 'numeric'
           })}
         </time>
-        
         {#if data.post.tags && data.post.tags.length > 0}
           <span class="mx-2">•</span>
           <div class="flex flex-wrap gap-2">
@@ -46,29 +43,14 @@
         {/if}
       </div>
     </div>
-    
     <div class="rounded-lg shadow-md p-6 mb-8 prose prose-invert max-w-none" style="background: linear-gradient(145deg, #1C2128 0%, #22272E 100%); border: 1px solid #30363D;">
-      {#if data.post.content}
-        {#if typeof data.post.content === 'function' || (typeof data.post.content === 'object' && data.post.content.render)}
-          <svelte:component this={data.post.content} />
-        {:else if typeof data.post.content === 'string'}
-          {@html data.post.content}
-        {:else}
-          <p>Unable to render post content. Format not recognized.</p>
-        {/if}
-      {:else}
-        <p>Post content is empty.</p>
-      {/if}
+      {@html data.post.content}
     </div>
   </article>
 {:else}
-  <div class="rounded-lg shadow-md p-6 text-center" style="background: linear-gradient(145deg, #1C2128 0%, #22272E 100%); border: 1px solid #30363D;">
-    <h1 class="text-2xl font-bold mb-4 text-white">Post Not Found</h1>
-    <p class="text-gray-400 mb-6">
-      The blog post you're looking for doesn't exist or has been removed.
-    </p>
-    <a href="/blog" class="btn btn-primary">
-      Back to Blog
-    </a>
+  <div class="text-center py-16">
+    <h1 class="text-4xl font-bold mb-4">Post Not Found</h1>
+    <p class="text-gray-400 mb-8">The blog post you are looking for could not be found.</p>
+    <a href="/blog" class="btn btn-primary">Back to Blog</a>
   </div>
 {/if}
