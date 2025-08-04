@@ -137,7 +137,7 @@
                 </svg>
             </a>
             <a
-                href="https://linkedin.com/in/abdulalmotaleb-alfasial-48392723a"
+                href="https://www.linkedin.com/in/mohammed-waled-burhan-61b88a30a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-primary inline-flex items-center"
