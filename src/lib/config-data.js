@@ -1,31 +1,31 @@
 export const defaultConfig = {
   site: {
-    title: "Portfolio Website",
-    tagline: "Professional Portfolio",
-    description: "A professional portfolio website",
-    domain: "localhost",
+    title: "Mohammed Waled's Portfolio",
+    tagline: "Network & CyberOps Engineer",
+    description: "Professional portfolio showcasing my work in networking, SOC, and cybersecurity.",
+    domain: "portfolio-rsy6.vercel.app",
     language: "en",
     copyright_year: new Date().getFullYear()
   },
   owner: {
-    name: "Your Name",
-    full_name: "Your Full Name",
-    profession: "Professional",
-    bio: "Professional bio goes here.",
-    location: "Location",
-    email: "contact@example.com"
+    name: "Mohammed",
+    full_name: "Mohammed Waled",
+    profession: "Network & CyberOps Engineer",
+    bio: "I'm a network security specialist and CyberOps enthusiast. I share knowledge, defend infrastructures, and teach students about cybersecurity fundamentals.",
+    location: "Iraq",
+    email: "3kr2001@gmail.com"
   },
   social: {
-    github: "",
+    github: "https://github.com/Mhmdghost",
     linkedin: "",
     twitter: "",
-    website: "",
-    blog: ""
+    website: "https://portfolio-rsy6.vercel.app",
+    blog: "https://youtube.com/@3KRSECURITY"
   },
   skills: {
-    networking: [],
-    technical: [],
-    certifications: []
+    networking: ["pfSense", "Wireshark", "IDS/IPS", "GNS3", "CCNA", "CyberOps"],
+    technical: ["Linux", "VirtualBox", "Kali Linux", "VLAN", "Firewall", "Routing", "Packet Tracer"],
+    certifications: ["CCNA (in progress)", "CyberOps Associate"]
   },
   theme: {
     primary_color: "#13B9FD",
@@ -50,13 +50,13 @@ export const defaultConfig = {
     enable_animations: true
   },
   seo: {
-    keywords: "portfolio, professional",
-    author: "Your Name",
+    keywords: "portfolio, network engineer, CyberOps, pfSense, CCNA, SOC",
+    author: "Mohammed Waled",
     robots: "index, follow"
   },
   contact: {
     show_contact_form: false,
-    email: "contact@example.com",
+    email: "3kr2001@gmail.com",
     phone: "",
     address: ""
   },
