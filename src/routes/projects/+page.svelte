@@ -1,20 +1,11 @@
 <script>
     import { getSiteConfig, getOwnerConfig, getProjectsConfig } from '$lib/config.js';
-    import { fade, fly, scale } from 'svelte/transition';
+    import { fade, fly } from 'svelte/transition';
     
     // Load configuration from TOML files
     const siteConfig = getSiteConfig();
     const ownerConfig = getOwnerConfig();
     const projects = getProjectsConfig();
-
-    const categories = [...new Set(projects.map(p => p.category))];
-    let selectedCategory = $state('All');
-
-    const filteredProjects = $derived(
-        selectedCategory === 'All' 
-            ? projects 
-            : projects.filter(p => p.category === selectedCategory)
-    );
 </script>
 
 <svelte:head>
@@ -32,93 +23,64 @@
                 My Projects
             </h1>
             <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed" in:fade={{duration:800,delay:200}}>
-                Here are some of the key projects I've worked on in network engineering, cybersecurity, 
-                and penetration testing. Each project demonstrates my practical application of technical skills 
-                and professional expertise.
+                Here are some of the key projects I've worked on in network engineering and cybersecurity. 
+                Click on any project to view detailed information.
             </p>
         </div>
 
-        <div class="mb-12">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">Filter by Category</h2>
-            <div class="flex flex-wrap gap-3 justify-center">
-                <button
-                    class="px-6 py-3 rounded-lg font-semibold transition-colors {selectedCategory === 'All' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600 border border-slate-600'}"
-                    on:click={() => selectedCategory = 'All'}
-                    in:scale={{duration:300}}
-                >
-                    All Projects
-                </button>
-                {#each categories as category, i}
-                    <button
-                        class="px-6 py-3 rounded-lg font-semibold transition-colors {selectedCategory === category ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600 border border-slate-600'}"
-                        on:click={() => selectedCategory = category}
-                        in:scale={{duration:300,delay:100*i}}
+        <!-- Project Cards -->
+        <div class="flex justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl">
+                {#each projects as project, i}
+                    <a 
+                        href={project.link}
+                        class="block bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-all duration-300 cursor-pointer hover:shadow-xl" 
+                        in:fly={{y:30,delay:100*i}}
                     >
-                        {category}
-                    </button>
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">{project.icon}</div>
+                            <h3 class="text-xl font-bold text-white mb-3">{project.name}</h3>
+                            <p class="text-slate-300 text-sm mb-4 line-clamp-3">
+                                {project.description}
+                            </p>
+                            <div class="flex flex-wrap gap-2 justify-center mb-4">
+                                {#each project.technologies.slice(0, 3) as tech}
+                                    <span class="px-2 py-1 text-xs rounded-md bg-slate-700 text-slate-200 border border-slate-600">
+                                        {tech}
+                                    </span>
+                                {/each}
+                                {#if project.technologies.length > 3}
+                                    <span class="px-2 py-1 text-xs rounded-md bg-blue-600 text-white">
+                                        +{project.technologies.length - 3} more
+                                    </span>
+                                {/if}
+                            </div>
+                            <div class="text-center">
+                                <span class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                                    View Details
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
                 {/each}
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {#each filteredProjects as project, i}
-                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-slate-600 transition-colors" in:fly={{y:30,delay:100*i}}>
-                    <div class="flex items-center mb-6">
-                        <span class="text-4xl mr-4">{project.icon}</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">{project.name}</h3>
-                            <span class="text-sm text-blue-400 font-medium">{project.category}</span>
-                        </div>
-                    </div>
-                    
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        {project.description}
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="text-sm font-semibold text-white mb-3">Key Highlights:</h4>
-                        <ul class="text-sm text-slate-300 space-y-2">
-                            {#each project.highlights as highlight}
-                                <li class="flex items-start">
-                                    <span class="text-green-400 mr-2 mt-1">•</span>
-                                    {highlight}
-                                </li>
-                            {/each}
-                        </ul>
-                    </div>
-                    
-                    <div class="border-t pt-6 mb-6" style="border-color: #475569;">
-                        <h4 class="text-sm font-semibold text-white mb-3">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            {#each project.technologies as tech}
-                                <span class="px-3 py-1 text-slate-200 text-xs rounded-md bg-slate-700 border border-slate-600">
-                                    {tech}
-                                </span>
-                            {/each}
-                        </div>
-                    </div>
+        <!-- Empty State -->
+        {#if projects.length === 0}
+            <div class="text-center py-16" in:fade={{duration:600}}>
+                <div class="text-6xl mb-6">📁</div>
+                <h3 class="text-2xl font-bold text-white mb-4">No Projects Yet</h3>
+                <p class="text-slate-300 max-w-md mx-auto">
+                    I'm currently working on new projects. Check back soon for updates!
+                </p>
+            </div>
+        {/if}
 
-                    {#if project.link}
-                        <div class="mt-6">
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors w-full justify-center"
-                                in:fade={{duration:400,delay:100*i}}
-                            >
-                                View Project
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
-                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-1a1 1 0 10-2 0v1H5V7h1a1 1 0 000-2H5z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    {/if}
-                </div>
-            {/each}
-        </div>
-
+        <!-- Contact Section -->
         <div class="mt-16 text-center" in:fade={{duration:700}}>
             <div class="bg-slate-800 rounded-xl p-8 border border-slate-700">
                 <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>

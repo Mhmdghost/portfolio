@@ -47,22 +47,22 @@ export const defaultConfig = {
     ]
   },
   theme: {
-    primary_color: "#3b82f6", // Light blue like Boot.dev
-    secondary_color: "#1d4ed8", // Darker blue
-    dark_background: "#0f172a", // Very dark blue-gray like Boot.dev
-    card_background: "linear-gradient(145deg, #1e293b 0%, #334155 100%)", // Slate gray gradient
-    border_color: "#475569" // Subtle border color
+    primary_color: "#3b82f6",
+    secondary_color: "#1d4ed8",
+    dark_background: "#0f172a",
+    card_background: "linear-gradient(145deg, #1e293b 0%, #334155 100%)",
+    border_color: "#475569"
   },
   navigation: {
     show_home: true,
-    show_projects: false,
+    show_projects: true,
     show_blog: true,
     show_contact: false
   },
   features: {
     show_skills: true,
     show_certifications: true,
-    show_projects: false,
+    show_projects: true,
     show_blog: true,
     show_social_links: true,
     enable_dark_mode: true,
@@ -79,5 +79,21 @@ export const defaultConfig = {
     phone: "07724227780",
     address: ""
   },
-  projects: []
+  projects: [
+    {
+      name: "VLAN + STP Lab",
+      description: "A comprehensive Cisco Packet Tracer lab demonstrating VLAN segmentation, trunking, and Spanning Tree Protocol (STP) configuration for building secure, loop-free networks.",
+      category: "Networking",
+      icon: "🌐",
+      highlights: [
+        "3x Layer 2 Switches with VLAN segmentation",
+        "2x Layer 3 Multilayer Switches for inter-VLAN routing",
+        "6 PCs distributed across 3 VLANs",
+        "Manual STP configuration with root and designated ports",
+        "Complete trunking and inter-VLAN routing setup"
+      ],
+      technologies: ["Cisco Packet Tracer", "VLAN", "STP", "Trunking", "Inter-VLAN Routing"],
+      link: "/projects/vlan-stp"
+    }
+  ]
 };
