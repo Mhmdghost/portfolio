@@ -94,6 +94,21 @@ export const defaultConfig = {
       ],
       technologies: ["Cisco Packet Tracer", "VLAN", "STP", "Trunking", "Inter-VLAN Routing"],
       link: "/projects/vlan-stp"
+    },
+    {
+      name: "SVI-LAB",
+      description: "SVI Lab demonstrating Inter-VLAN routing on a Layer 3 switch using Switch Virtual Interfaces in Cisco Packet Tracer.",
+      category: "Networking",
+      icon: "🔌",
+      highlights: [
+        "Multiple VLANs with different subnet masks (/25, /26, /27)",
+        "SVI gateway configuration for each VLAN",
+        "Layer 3 routing enablement and verification",
+        "Cross-VLAN communication testing with ping",
+        "ARP resolution and network troubleshooting"
+      ],
+      technologies: ["Cisco Packet Tracer", "SVI", "Inter-VLAN Routing", "Layer 3 Switch", "VLAN Configuration", "Network Troubleshooting"],
+      link: "/projects/svi-lab"
     }
   ]
 };
