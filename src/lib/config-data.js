@@ -110,5 +110,27 @@ export const defaultConfig = {
       technologies: ["Cisco Packet Tracer", "SVI", "Inter-VLAN Routing", "Layer 3 Switch", "VLAN Configuration", "Network Troubleshooting"],
       link: "/projects/svi-lab"
     }
+    ,
+    {
+      name: "Static & Default Routing Lab",
+      description: "A Cisco Packet Tracer lab demonstrating static routes and a default route between two routers and a multilayer switch, including topology, addressing, configs, and verification.",
+      category: "Networking",
+      icon: "🛰️",
+      highlights: [
+        "Two Cisco routers connected via a serial link",
+        "Multilayer switch (MLS1) acting as default gateway (SVI – VLAN1)",
+        "Implementation of static routes and a default route",
+        "End-to-end connectivity testing with ping & tracert",
+        "Organized topology, clean configs, and full addressing scheme"
+      ],
+      technologies: [
+        "Cisco Packet Tracer",
+        "Static Routing",
+        "Default Route",
+        "Layer 3 Switch (SVI)",
+        "Network Troubleshooting"
+      ],
+      link: "/projects/static-default-routing"
+    }
   ]
 };

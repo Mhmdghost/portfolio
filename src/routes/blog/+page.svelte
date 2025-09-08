@@ -1,11 +1,8 @@
 <script>
-  /** @type {import('./$types').PageData} */
-  let { data } = $props();
+  export let data;
   import { fade } from 'svelte/transition';
-  let showHero = false;
-  import { onMount } from 'svelte';
-  onMount(() => { showHero = true; });
-  const posts = data.posts;
+  let showHero = true;
+  const posts = data?.posts || [];
 </script>
 
 <svelte:head>
@@ -31,7 +28,10 @@
     {:else}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {#each posts as post (post.slug)}
-          <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-slate-600 transition-colors">
+          <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-colors flex flex-col hover:shadow-xl">
+            <div class="text-center mb-4">
+              <div class="text-4xl">📝</div>
+            </div>
             <div class="mb-6">
               <h2 class="text-xl font-bold mb-3 text-white">
                 <a href="/blog/{post.slug}" class="text-white hover:text-blue-400 transition-colors duration-200">
@@ -48,13 +48,13 @@
             </div>
             
             {#if post.description}
-              <p class="text-slate-300 mb-6 text-base leading-relaxed">
+              <p class="text-slate-300 mb-4 text-base leading-relaxed text-center">
                 {post.description}
               </p>
             {/if}
             
             {#if post.tags && post.tags.length > 0}
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 justify-center mb-4">
                 {#each post.tags as tag}
                   <span class="px-3 py-1 text-xs font-medium text-slate-200 rounded-md bg-slate-700 border border-slate-600">
                     {tag}
@@ -63,13 +63,13 @@
               </div>
             {/if}
             
-            <div class="mt-6">
+            <div class="mt-auto pt-2 text-center">
               <a 
                 href="/blog/{post.slug}" 
-                class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors w-full justify-center"
+                class="inline-flex items-center px-3 py-1.5 text-xs bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors no-underline"
               >
                 Read More
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>

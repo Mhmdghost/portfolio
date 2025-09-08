@@ -22,7 +22,7 @@
             <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight" in:fly={{y:40,duration:600}}>
                 My Projects
             </h1>
-            <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed" in:fade={{duration:800,delay:200}}>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-center" in:fade={{duration:800,delay:200}}>
                 Here are some of the key projects I've worked on in network engineering and cybersecurity. 
                 Click on any project to view detailed information.
             </p>
@@ -34,13 +34,13 @@
                 {#each projects as project, i}
                     <a 
                         href={project.link}
-                        class="block bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-all duration-300 cursor-pointer hover:shadow-xl" 
+                        class="block bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-slate-600 transition-all duration-300 cursor-pointer hover:shadow-xl no-underline" 
                         in:fly={{y:30,delay:100*i}}
                     >
                         <div class="text-center">
                             <div class="text-5xl mb-4">{project.icon}</div>
                             <h3 class="text-xl font-bold text-white mb-3">{project.name}</h3>
-                            <p class="text-slate-300 text-sm mb-4 line-clamp-3">
+                            <p class="text-slate-300 text-sm mb-4 line-clamp-3 text-center">
                                 {project.description}
                             </p>
                             <div class="flex flex-wrap gap-2 justify-center mb-4">

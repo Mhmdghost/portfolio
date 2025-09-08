@@ -38,7 +38,7 @@
                         {project.name}
                     </h1>
                 </div>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed" in:fade={{duration:800,delay:200}}>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed text-center" in:fade={{duration:800,delay:200}}>
                     {project.description}
                 </p>
             </div>
@@ -72,13 +72,13 @@
             <!-- Special content for VLAN + STP project -->
             {#if slug === 'vlan-stp'}
                 <!-- Topology Image -->
-                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8" in:fly={{y:30,duration:600,delay:200}}>
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8 overflow-hidden" in:fly={{y:30,duration:600,delay:200}}>
                     <h2 class="text-3xl font-bold mb-6 text-white">📸 Network Topology</h2>
                     <div class="text-center">
                         <img 
                             src="/images/vlan-lab.png" 
                             alt="VLAN Network Topology" 
-                            class="max-w-full h-auto rounded-lg border border-slate-600 shadow-lg"
+                            class="max-w-full w-full h-auto rounded-lg border border-slate-600 shadow-lg"
                             in:scale={{duration:500}}
                         />
                     </div>
@@ -146,6 +146,89 @@
                                 <div>
                                     <h3 class="text-xl font-semibold text-white mb-2">Download .pkt File</h3>
                                     <p class="text-slate-300">Direct download of the Packet Tracer file</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414L-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {/if}
+
+            {#if slug === 'static-default-routing'}
+                <!-- Network Topology -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8" in:fly={{y:30,duration:600,delay:150}}>
+                    <h2 class="text-3xl font-bold mb-6 text-white">📸 Network Topology</h2>
+                    <div class="text-center">
+                        <img 
+                            src="https://raw.githubusercontent.com/Mhmdghost/static-default-routing-lab/main/topology.png" 
+                            alt="Static & Default Routing Lab - Topology" 
+                            class="max-w-full h-auto rounded-lg border border-slate-600 shadow-lg"
+                            in:scale={{duration:500}}
+                        />
+                    </div>
+                </div>
+
+                <!-- Project Description -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8" in:fly={{y:30,duration:600,delay:200}}>
+                    <h2 class="text-3xl font-bold mb-6 text-white">📖 Project Description</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        This project is a Cisco Packet Tracer lab designed to demonstrate Static Routing and the use of a Default Route in a small enterprise network. The topology includes two routers (R1, R2), a multilayer switch (MLS1), and four end devices. MLS1 provides LAN gateway functionality through a Switch Virtual Interface (SVI).
+                    </p>
+                    <div class="mt-4 text-slate-300 leading-relaxed">
+                        <p class="mb-2">The project shows how to:</p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Configure point-to-point /30 subnets for router interconnections</li>
+                            <li>Add static routes for specific networks</li>
+                            <li>Use a default route to forward unknown traffic</li>
+                            <li>Verify connectivity across all devices including loopbacks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Learning Outcome -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8" in:fly={{y:30,duration:600,delay:300}}>
+                    <h2 class="text-3xl font-bold mb-6 text-white">🎯 Learning Outcome</h2>
+                    <ul class="text-slate-300 space-y-3">
+                        <li class="flex items-start"><span class="text-green-400 mr-3">•</span>Understand how static routes are configured and propagated in a small network</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">•</span>Learn the role of a default route as a gateway of last resort</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">•</span>Validate routing with tools like ping and tracert</li>
+                        <li class="flex items-start"><span class="text-green-400 mr-3">•</span>Gain confidence in troubleshooting connectivity in Cisco Packet Tracer</li>
+                    </ul>
+                </div>
+
+                <!-- Project Resources -->
+                <div class="bg-slate-800 rounded-xl p-8 border border-slate-700 mb-8" in:fly={{y:30,duration:600,delay:400}}>
+                    <h2 class="text-3xl font-bold mb-6 text-white">📂 Project Resources</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a
+                            href="https://github.com/Mhmdghost/static-default-routing-lab"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-slate-700 hover:bg-slate-600 rounded-lg p-6 border border-slate-600 transition-colors group"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-2">View on GitHub</h3>
+                                    <p class="text-slate-300">Static & Default Routing Lab repository</p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-1a1 1 0 10-2 0v1H5V7h1a1 1 0 000-2H5z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a
+                            href="https://github.com/Mhmdghost/static-default-routing-lab/raw/main/static-default-routing.pkt"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-slate-700 hover:bg-slate-600 rounded-lg p-6 border border-slate-600 transition-colors group"
+                        >
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-white mb-2">Download .pkt File</h3>
+                                    <p class="text-slate-300">Direct download from repo (static-default-routing.pkt)</p>
                                 </div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400 group-hover:text-white transition-colors" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414L-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />

@@ -14,7 +14,7 @@
 </svelte:head>
 
 {#if data.post}
-  <article class="max-w-6xl mx-auto">
+  <article class="max-w-none w-full mx-auto px-4">
     <div class="mb-8">
       <a href="/blog" class="inline-flex items-center text-primary hover:underline mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -43,8 +43,12 @@
         {/if}
       </div>
     </div>
-    <div class="rounded-lg shadow-md p-6 mb-8 prose prose-invert max-w-none" style="background: linear-gradient(145deg, #1C2128 0%, #22272E 100%); border: 1px solid #30363D;">
-      {@html data.post.content}
+    <div class="rounded-lg shadow-md p-6 mb-8 prose prose-invert max-w-none" style="max-width: none; width: 100%; background: linear-gradient(145deg, #1C2128 0%, #22272E 100%); border: 1px solid #30363D;">
+      {#if data.post.content}
+        <svelte:component this={data.post.content} />
+      {:else}
+        <p class="text-slate-300">No content available.</p>
+      {/if}
     </div>
   </article>
 {:else}
