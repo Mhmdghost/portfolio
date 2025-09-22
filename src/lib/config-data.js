@@ -131,6 +131,32 @@ export const defaultConfig = {
         "Network Troubleshooting"
       ],
       link: "/projects/static-default-routing"
+    },
+    {
+      name: "Enterprise Network Lab",
+      description: "Designed and implemented a full enterprise network with Switching, Routing (OSPF), NAT/PAT, ACLs, DHCP, NTP, and SSH.",
+      category: "Networking",
+      icon: "🌐",
+      highlights: [
+        "Multi-layer network design with switches and routers",
+        "OSPF dynamic routing protocol configuration",
+        "NAT (Network Address Translation) implementation",
+        "Access Control Lists (ACL) for security",
+        "DHCP server configuration and management",
+        "NTP time synchronization across devices",
+        "SSH secure remote access configuration"
+      ],
+      technologies: [
+        "Cisco Packet Tracer",
+        "OSPF Routing",
+        "NAT Configuration",
+        "ACL Security",
+        "DHCP Services",
+        "NTP Synchronization",
+        "SSH Security",
+        "Layer 2/3 Switching"
+      ],
+      link: "/projects/switching-routing-ospf-nat-acl-dhcp-ntp-ssh"
     }
   ]
 };
